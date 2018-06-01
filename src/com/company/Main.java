@@ -7,15 +7,15 @@ public class Main {
 	// write your code here
         Scanner keyboard = new Scanner(System.in);
         double length, width,areaOfRoof,runoff;
-        int footInInches = 12;
-        int gallonInCubic = 361;
+
+        int gallonInCubic = 231;
         System.out.println("Rain fall Calculator \n ...............................\n");
         System.out.println("Enter the length of the roof: ");
         length = keyboard.nextDouble();
         System.out.println("Enter the length of the roof: ");
         width = keyboard.nextDouble();
 
-        areaOfRoof = areaCalculator(length,width) * footInInches;
+        areaOfRoof = areaCalculator(length,width);
 
         runoff = areaOfRoof/gallonInCubic;
 
@@ -27,8 +27,8 @@ public class Main {
     }
 
     public static double areaCalculator(double len , double width){
-
-        Double area = len * width;
+        int footInInches = 12;
+        Double area = len*footInInches* width*footInInches;
 
         return area;
     }
